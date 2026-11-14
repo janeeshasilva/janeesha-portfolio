@@ -74,3 +74,87 @@ if (yearElement) {
         `© ${currentYear} Janeesha Hansaka Silva. All Rights Reserved.`;
 
 }
+
+// Dark/Light Mode Toggle
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = document.getElementById("themeIcon");
+const body = document.body;
+
+if (localStorage.getItem("theme") === "light") {
+    body.classList.add("light-mode");
+    themeIcon.textContent = "☀️";
+}
+
+themeToggle.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
+
+    if (body.classList.contains("light-mode")) {
+        themeIcon.textContent = "☀️";
+        localStorage.setItem("theme", "light");
+    } else {
+        themeIcon.textContent = "🌙";
+        localStorage.setItem("theme", "dark");
+    }
+});
+
+//Back to top Button
+const backToTopBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", ()=> {
+
+    if (window.scrollY > 400) {
+        backToTopBtn.classList.add("show");
+    } else {
+        backToTopBtn.classList.remove("show");
+    }
+});
+
+backToTopBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+
+// typing animation
+const typingText = document.getElementById("typingText");
+
+const roles = [
+    "Data Science Undergraduate",
+    "Software Developer",
+    "Problem Solver"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false ;
+
+function typeEffect(){
+    
+    const currentRole = roles[roleIndex];
+
+    if (isDeleting){
+        typingText.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typingText.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    let typingSpeed = isDeleting? 40: 80;
+
+    if (!isDeleting && charIndex === currentRole.length){
+        typingSpeed= 1800;
+        isDeleting= true;
+    } else if (isDeleting && charIndex === 0){
+        isDeleting = false;
+        roleIndex = (roleIndex + 1)% roles.length;
+        typingSpeed= 300;
+    }
+
+    setTimeout(typeEffect, typingSpeed);
+}
+
+typeEffect();

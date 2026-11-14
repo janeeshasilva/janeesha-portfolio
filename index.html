@@ -14,7 +14,9 @@
     <!-- Navigation Bar -->
     <header>
         <nav class="navbar">
-            <a href="#home" class="logo">JANEESHA<span>.</span></a>
+            <a href="#home" class="logo">
+                <img src="dp.jpg" alt="Janeesha Logo">
+            </a>
 
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -24,6 +26,9 @@
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <span id="themeIcon">🌙</span>
+            </button>
         </nav>
     </header>
 
@@ -37,7 +42,7 @@
 
             <h1>Janeesha<br><span>Hansaka Silva</span></h1>
 
-            <h2>Data Science Undergraduate</h2>
+            <h2><span id="typingText" ></span><span class="cursor"></span></h2>
 
             <p class="hero-description">
                 Exploring Data, Technology & Software Development.
@@ -52,14 +57,18 @@
                 <a href="#contact" class="btn secondary-btn">
                     Contact Me
                 </a>
+
+                <a href="JaneeshaSilva CV" target="_blank" class="btn cv-btn">
+                    Download CV
+                </a>
             </div>
 
         </div>
 
-        <!-- Profile Placeholder -->
+        <!-- Profile Image -->
         <div class="profile-container">
             <div class="profile-placeholder">
-                <span>JH</span>
+                 <img src="dp.jpg" alt="Janeesha Hansaka Silva">
             </div>
         </div>
 
@@ -355,6 +364,11 @@
         </p>
 
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+         ↑
+    </button>
 
 
     <script src="script.js"></script>
