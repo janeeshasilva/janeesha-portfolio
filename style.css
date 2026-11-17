@@ -663,6 +663,32 @@ footer p + p {
     margin-top: 5px;
 }
 
+/* =========================================
+   EXPERIENCE
+========================================= */
+
+.timeline-item + .timeline-item {
+    margin-top: 45px;
+}
+
+.timeline-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.timeline-list li {
+    position: relative;
+    padding-left: 18px;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.timeline-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
 
 /* =========================================
    RESPONSIVE DESIGN
